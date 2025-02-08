@@ -1,7 +1,7 @@
 let map;
 
 async function fetchRestaurants() {
-    const response = await fetch("get_restaurants.php");
+    const response = await fetch("get_restaurant.php");
     return response.json();
 }
 
@@ -19,7 +19,7 @@ function initMap() {
     fetchRestaurants().then((restaurants) => {
         restaurants.forEach((restaurant) => {
             // Use geocoder to convert address to latitude/longitude
-            geocoder.geocode({ address: restaurant.address }, (results, status) => {
+            geocoder.geocode({ address: restaurant_owners.address }, (results, status) => {
                 if (status === google.maps.GeocoderStatus.OK) {
                     const location = results[0].geometry.location;
 
@@ -27,12 +27,23 @@ function initMap() {
                     const marker = new google.maps.Marker({
                         position: location,
                         map,
-                        title: restaurant.name,
+                        title: restaurant_owners.restaurant_name,
                     });
 
                     marker.addListener("click", async () => {
-                        const inventory = await fetch(`get_inventory.php?restaurant_id=${restaurant.id}`).then(res => res.json());
-                        alert(`Inventory for ${restaurant.name}: \n` + inventory.map(item => `${item.item_name}: ${item.quantity}`).join("\n"));
+                        const inventory = await fetch(`get_inventory.php?restaurant_id=${restaurant_owners.id}`).then(res => res.json());
+                        //alert(`Inventory for ${restaurant.name}: \n` + inventory.map(item => `${item.item_name}: ${item.quantity}`).join("\n"));
+                        const inventoryList = inventory.map(item => `<li>${item.item_name}: ${item.quantity}</li>`).join("");
+
+                        const contentString = `
+                            <div style="max-width: 200px;">
+                                <h3>${restaurant.name}</h3>
+                                <ul>${inventoryList || "<li>No inventory available</li>"}</ul>
+                            </div>
+                        `;
+
+                        infoWindow.setContent(contentString);
+                        infoWindow.open(map, marker);
                     });
                 } else {
                     console.error(`Geocoding failed for ${restaurant.name}: ${status}`);
