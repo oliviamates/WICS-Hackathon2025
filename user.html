@@ -3,8 +3,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="myuser.css">
+         <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5M87HdRKHoWDUg2V3uXRPkC-_YwfPC3s&callback=initMap"></script>
         <script type="text/javascript" src= "script.js"></script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5M87HdRKHoWDUg2V3uXRPkC-_YwfPC3s&callback=initMap"></script>
         <title>Find Surplus Food</title>
     </head>
     <body>
@@ -23,6 +23,8 @@
             // Load the Google Maps Places library and initialize autocomplete
             google.maps.event.addDomListener(window, 'load', initializeAutocomplete);
         </script>
+
+        <div id="map" style="height: 500px; width: 100%;"></div>
 
         <h1 class="resource-title">Resources</h1>
         <ul class="resource-list">
