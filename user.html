@@ -2,32 +2,25 @@
 
 <html>
     <head>
-        <link ref="stylesheet" href="user.css"/>
-        <title>User Page</title>
+        <script type="text/javascript" src= "script.js"></script>
+        <script async src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBLvKksC_A6VUn2n0YdRsHcEN0TcC7ZRy8&callback=initMap"></script>
+        <title>Welcome User</title>
     </head>
     <body>
-        <form action="action_page.php" method="post">
-            <div class="imgcontainer">
-              <img src="img_avatar2.png" alt="Avatar" class="avatar">
-            </div>
-          
-            <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-          
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-          
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-          
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
+        
+        <script>
+            // Initialize Google Places Autocomplete for start and end inputs
+            function initializeAutocomplete() {
+                var startInput = document.getElementById('start');
+                var endInput = document.getElementById('end');
+        
+                var autocompleteStart = new google.maps.places.Autocomplete(startInput);
+                var autocompleteEnd = new google.maps.places.Autocomplete(endInput);
+            }
+        
+            // Load the Google Maps Places library and initialize autocomplete
+            google.maps.event.addDomListener(window, 'load', initializeAutocomplete);
+        </script>
+
     </body>
 </html>
