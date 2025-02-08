@@ -1,6 +1,11 @@
 body {
     background-color: #fefae0;
 }
+#logo {
+    width: 1000px;
+    margin-left: 250px;
+    margin-top: 100px;
+}
 .header {
     text-align: center;
     margin: auto;
@@ -14,7 +19,7 @@ body {
     color: #d4a373;
 }
 #question {
-    margin-top: 150px;
+    margin-top: 50px;
     font-family: Georgia, serif;
     color: #814e18;
     font-size: 40px;
@@ -30,7 +35,7 @@ body {
     margin-top: 40px;
 }
 #click1 {
-    margin-left: 70px;
+    margin-left: 50px;
 }
 #click2 {
     margin-left: 150px;
@@ -40,6 +45,23 @@ body {
     justify-content: center; /* Center buttons horizontally */
     gap: 20px; /* Adjust space between buttons */
     margin-top: 50px;
+}
+#chart {
+    margin-left: 30px;
+}
+#description {
+    margin-right: 50px;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    color: #824912;
+    font-weight: lighter;
+}
+
+.chart-space {
+    display: flex;
+    justify-content: center; 
+    gap: 40px; 
+    margin-top: 70px;
 }
 
 .button-56 {
@@ -100,3 +122,26 @@ body {
   }
 }
 
+.foodimage { 
+    display: flex; 
+    margin-right: 40px;
+    margin-top: 80px;
+    gap: 20px;
+}
+  .foodtext {
+    margin-left: 40px;
+    margin-right: 70px;
+    margin-top: 70px;
+    font-family: 'Times New Roman', serif;
+    color: #824912;
+    font-weight: lighter;
+  }
+
+.lighter {
+    font-weight: lighter;
+}
+
+#tower-img {
+    width: 300px;
+    margin-right: 60px;
+}

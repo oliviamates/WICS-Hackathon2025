@@ -2,11 +2,13 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="myuser.css">
         <script type="text/javascript" src= "script.js"></script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBLvKksC_A6VUn2n0YdRsHcEN0TcC7ZRy8&callback=initMap"></script>
-        <title>Welcome User</title>
+        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5M87HdRKHoWDUg2V3uXRPkC-_YwfPC3s&callback=initMap"></script>
+        <title>Find Surplus Food</title>
     </head>
     <body>
+        <img id="logo" src="lassologo.jpeg" alt="Leftover Lasso Logo">
         
         <script>
             // Initialize Google Places Autocomplete for start and end inputs
@@ -21,6 +23,13 @@
             // Load the Google Maps Places library and initialize autocomplete
             google.maps.event.addDomListener(window, 'load', initializeAutocomplete);
         </script>
+
+        <h1 class="resource-title">Resources</h1>
+        <ul class="resource-list">
+            <li><a href="https://deanofstudents.utexas.edu/sos/utoutpost.php">The UT Outpost</a></li>
+            <li><a href="https://www.atxfreefridge.com/atx-resource-map">ATX Free Fridge</a></li>
+            <li><a href="https://www.instagram.com/westcampuscollective/">West Campus Collective</a></li>
+        </ul>
 
     </body>
 </html>
