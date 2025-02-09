@@ -15,7 +15,6 @@ function initMap() {
     });
 
     const geocoder = new google.maps.Geocoder();
-    const infoWindow = new google.maps.InfoWindow();
     
     fetchRestaurants().then((restaurants) => {
         restaurants.forEach((restaurant) => {
@@ -34,16 +33,13 @@ function initMap() {
 
                     marker.addListener("click", async () => {
                         const inventory = await fetch(`get_inventory.php?restaurant_id=${restaurant.id}`).then(res => res.json());
-                        
-                        // Check if inventory data is available
-                        const inventoryList = inventory.length
-                            ? inventory.map(item => `<li>${item.food_type}: ${item.amount}</li>`).join("")
-                            : "<li>No inventory available</li>";
+                        //alert(`Inventory for ${restaurant.name}: \n` + inventory.map(item => `${item.item_name}: ${item.quantity}`).join("\n"));
+                        const inventoryList = inventory.map(item => `<li>${item.item_name}: ${item.quantity}</li>`).join("");
 
                         const contentString = `
                             <div style="max-width: 200px;">
-                                <h3 style="margin: 20;padding: 10">${restaurant.restaurant_name}</h3>
-                                <ul>${inventoryList}</ul>
+                                <h3>${restaurant.name}</h3>
+                                <ul>${inventoryList || "<li>No inventory available</li>"}</ul>
                             </div>
                         `;
 
