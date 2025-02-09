@@ -45,6 +45,7 @@ body {
     justify-content: center; /* Center buttons horizontally */
     gap: 20px; /* Adjust space between buttons */
     margin-top: 50px;
+    
 }
 #chart {
     margin-left: 30px;
@@ -122,6 +123,13 @@ body {
   }
 }
 
+.button-space { 
+  display: flex; 
+  margin-right: 40px;
+  margin-top: 80px;
+  gap: 20px;
+}
+
 .foodimage { 
     display: flex; 
     margin-right: 40px;
@@ -167,4 +175,19 @@ footer {
   margin-left: 150px;
 }
 
+#cactus1 {
+  width: 300px;
+  margin-left: 100px;
+  margin-top: -100px;
 
+}
+
+#cactus2 {
+  width: 300px;
+  margin-top: -100px;
+
+}
+
+#horn-img {
+  width: 100px;
+}
