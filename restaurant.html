@@ -8,11 +8,38 @@
     <body>
         <img id="logo" src="images/lassologo.jpeg" alt="Leftover Lasso Logo">
 
-        <h1 id="greeting"></h1> <!-- This is where the greeting will be updated -->
+        <script>
+          fetch("session.php")
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById("greeting").innerText = `Howdy, ${data.restaurant_name}`;
+              })
+              .catch(error => console.error("Error fetching session data:", error));
+        </script>
+        <h1 id="greeting"></h1>
+
+        <h2>Inventory</h2>
+        <ul id="inventoryList"></ul> <!-- Inventory will be displayed here -->
+        
+        <script>
+          fetch("inventory.php")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        const inventoryList = document.getElementById("inventoryList");
+                        inventoryList.innerHTML = data.inventory.map(item => 
+                            `<li>${item.food_type}: ${item.amount}</li>`
+                        ).join(""); // Populate the list
+                    } else {
+                        console.error("Error fetching inventory:", data.message);
+                    }
+                })
+                .catch(error => console.error("Error fetching inventory:", error));
+        </script>
     
           
         <div class="container">
-            <form action="action_page.php">
+            <form action="update_inventory.php" method="POST">
           
               <label for="subject">Description of Food Item</label>
               <textarea id="subject" name="subject" placeholder="Describe the item..." style="height:200px"></textarea>
