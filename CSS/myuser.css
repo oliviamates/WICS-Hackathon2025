@@ -1,0 +1,60 @@
+body {
+    background-color: #fefae0;
+}
+
+#logo {
+    width: 700px;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+
+.resource-title {
+    font-family: Georgia, serif;
+    color: #814e18;
+}
+
+.resource-list {
+    font-family: Georgia, serif;
+    color: #814e18;
+    font-size: 18px;
+}
+
+#map {
+    display: flex;
+    margin-left: 370px;
+    border-style: solid;
+    border-color: white;
+    border-width: 20px;
+}
+
+.foodimage { 
+    display: flex; 
+    margin-right: 40px;
+    margin-top: 80px;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+  .foodtext {
+    margin-left: 40px;
+    margin-right: 70px;
+    margin-top: 70px;
+    font-family: 'Times New Roman', serif;
+    color: #824912;
+    font-weight: lighter;
+  }
+  #hat {
+    width: 300px;
+    margin-left: 125px;
+    margin-right: 100px;
+  }
+
+  #boot {
+    width: 250px;
+    margin-left: 125px;
+  }
+
+  #rope {
+    width: 1400px;
+    margin-top: 100px;
+    margin-left: 15px;
+  }

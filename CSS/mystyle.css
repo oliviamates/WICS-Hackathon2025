@@ -145,3 +145,26 @@ body {
     width: 300px;
     margin-right: 60px;
 }
+
+footer {
+  background-color:#e9edc9;
+  height: 100px;
+}
+
+.footer-text{
+  text-align: center;
+  font-family: Georgia, serif;
+  color: #824912;
+  font-size: 22px;
+
+}
+
+#footer1 {
+  margin-right: 150px;
+}
+
+#footer2 {
+  margin-left: 150px;
+}
+
+

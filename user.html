@@ -2,36 +2,32 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="myuser.css">
+        <link rel="stylesheet" href="CSS/myuser.css">
          <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5M87HdRKHoWDUg2V3uXRPkC-_YwfPC3s&callback=initMap"></script>
-        <script type="text/javascript" src= "script.js"></script>
+        <script src= "script.js"></script>
         <title>Find Surplus Food</title>
     </head>
     <body>
-        <img id="logo" src="lassologo.jpeg" alt="Leftover Lasso Logo">
+        <img id="logo" src="images/lassologo.jpeg" alt="Leftover Lasso Logo">
         
-        <script>
-            // Initialize Google Places Autocomplete for start and end inputs
-            function initializeAutocomplete() {
-                var startInput = document.getElementById('start');
-                var endInput = document.getElementById('end');
-        
-                var autocompleteStart = new google.maps.places.Autocomplete(startInput);
-                var autocompleteEnd = new google.maps.places.Autocomplete(endInput);
-            }
-        
-            // Load the Google Maps Places library and initialize autocomplete
-            google.maps.event.addDomListener(window, 'load', initializeAutocomplete);
-        </script>
 
-        <div id="map" style="height: 500px; width: 100%;"></div>
+        <div id="map" style="height: 500px; width: 50%;"></div>
+        <img id="rope" src="images/rope.jpeg" alt="rope banner">
 
-        <h1 class="resource-title">Resources</h1>
-        <ul class="resource-list">
-            <li><a href="https://deanofstudents.utexas.edu/sos/utoutpost.php">The UT Outpost</a></li>
-            <li><a href="https://www.atxfreefridge.com/atx-resource-map">ATX Free Fridge</a></li>
-            <li><a href="https://www.instagram.com/westcampuscollective/">West Campus Collective</a></li>
-        </ul>
+        <div class="foodimage">
+            <img id="hat" src="images/cowboyhat.jpeg" alt="cowboy hat">
+            <div class="foodtext">
+                <h1 class="resource-title">Resources</h1>
+                <ul class="resource-list">
+                    <li><a href="https://deanofstudents.utexas.edu/sos/utoutpost.php">The UT Outpost</a></li>
+                    <li><a href="https://www.atxfreefridge.com/atx-resource-map">ATX Free Fridge</a></li>
+                    <li><a href="https://www.instagram.com/westcampuscollective/">West Campus Collective</a></li>
+                </ul>
+            </div>
+            <img id="boot" src="images/boot.jpeg" alt="cowboy boot">
+          </div>
+        
 
     </body>
+
 </html>
