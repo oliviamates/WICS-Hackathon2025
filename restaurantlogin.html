@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
       <link rel="stylesheet" href="CSS/myrestaurant.css">
@@ -7,21 +6,15 @@
     </head>
     <body>
       <img id="logo" src="images/lassologo.jpeg" alt="Leftover Lasso Logo">
-      <script>
-        function redirectUser() {
-            // You can add validation here if needed
-            window.location.href = "restaurant.html"; // Redirect to user.html
-            return false; // Prevent actual form submission
-        }
-        </script>
-        <form action="action_page.php" method="post"  onsubmit="return redirectUser()">
+      
+        <form id="loginForm" method="post">
           
             <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
+              <label for="username"><b>Username</b></label>
+              <input type="text" id="username" placeholder="Enter Username" required>
           
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
+              <label for="password"><b>Password</b></label>
+              <input type="password" id="password" placeholder="Enter Password" required>
           
               <button type="submit">Login</button>
               <label>
@@ -33,6 +26,41 @@
               <button type="button" class="cancelbtn">Cancel</button>
               <span class="psw">Forgot <a href="#">password?</a></span>
             </div>
-          </form>
+        </form>
+
+        <script>
+            // Function to handle the login form submission
+            document.getElementById("loginForm").addEventListener("submit", async function (event) {
+                event.preventDefault();  // Prevent the default form submission
+    
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+    
+                const loginData = {
+                    username: username,
+                    password: password
+                };
+    
+                const response = await fetch('login.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(loginData)
+                });
+    
+                const result = await response.json();
+    
+                if (result.status === 'success') {
+                    // Handle successful login (e.g., redirect to another page)
+                    document.cookie = "restaurant_name=Chipotle; expires=Fri, 31 Dec 2025 23:59:59 UTC; path=/";
+                    alert("Login successful! Redirecting...");
+                    window.location.href = "restaurant.html";  // Redirect after successful login
+                } else {
+                    // Handle failed login (e.g., show error message)
+                    alert("Login failed: " + result.message);
+                }
+            });
+        </script>
     </body>
 </html>
