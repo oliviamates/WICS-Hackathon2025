@@ -7,60 +7,65 @@
     <body>
       <img id="logo" src="images/lassologo.jpeg" alt="Leftover Lasso Logo">
       
-        <form id="loginForm" method="post">
+          <div class = "triple">
+            <img id="horse" src="images/cactus.jpeg" alt="Tumbleweed">
+              <form id="loginForm" method="post">
           
-            <div class="container">
-              <label for="username"><b>Username</b></label>
-              <input type="text" id="username" placeholder="Enter Username" required>
-          
-              <label for="password"><b>Password</b></label>
-              <input type="password" id="password" placeholder="Enter Password" required>
-          
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-          
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-        </form>
-
-        <script>
-            // Function to handle the login form submission
-            document.getElementById("loginForm").addEventListener("submit", async function (event) {
-                event.preventDefault();  // Prevent the default form submission
+                <div class="container">
+                  <label for="username"><b>Username</b></label>
+                  <input type="text" id="username" placeholder="Enter Username" required>
+              
+                  <label for="password"><b>Password</b></label>
+                  <input type="password" id="password" placeholder="Enter Password" required>
+              
+                  <button type="submit">Login</button>
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                </div>
+              
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
     
-                const username = document.getElementById("username").value;
-                const password = document.getElementById("password").value;
-    
-                const loginData = {
-                    username: username,
-                    password: password
-                };
-    
-                const response = await fetch('login.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(loginData)
+            <script>
+                // Function to handle the login form submission
+                document.getElementById("loginForm").addEventListener("submit", async function (event) {
+                    event.preventDefault();  // Prevent the default form submission
+        
+                    const username = document.getElementById("username").value;
+                    const password = document.getElementById("password").value;
+        
+                    const loginData = {
+                        username: username,
+                        password: password
+                    };
+        
+                    const response = await fetch('login.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(loginData)
+                    });
+        
+                    const result = await response.json();
+        
+                    if (result.status === 'success') {
+                        // Handle successful login (e.g., redirect to another page)
+                        document.cookie = "restaurant_name=Chipotle; expires=Fri, 31 Dec 2025 23:59:59 UTC; path=/";
+                        alert("Login successful! Redirecting...");
+                        window.location.href = "restaurant.html";  // Redirect after successful login
+                    } else {
+                        // Handle failed login (e.g., show error message)
+                        alert("Login failed: " + result.message);
+                    }
                 });
-    
-                const result = await response.json();
-    
-                if (result.status === 'success') {
-                    // Handle successful login (e.g., redirect to another page)
-                    document.cookie = "restaurant_name=Chipotle; expires=Fri, 31 Dec 2025 23:59:59 UTC; path=/";
-                    alert("Login successful! Redirecting...");
-                    window.location.href = "restaurant.html";  // Redirect after successful login
-                } else {
-                    // Handle failed login (e.g., show error message)
-                    alert("Login failed: " + result.message);
-                }
-            });
-        </script>
+            </script>
+          
+              <img id="sherriff" src="images/boot.jpeg" alt="wagon">
+          </div>
     </body>
 </html>
