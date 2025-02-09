@@ -19,6 +19,7 @@ function initMap() {
     fetchRestaurants().then((restaurants) => {
         restaurants.forEach((restaurant) => {
             // Use geocoder to convert address to latitude/longitude
+            console.log(restaurant);
             geocoder.geocode({ address: restaurant.address }, (results, status) => {
                 if (status === google.maps.GeocoderStatus.OK) {
                     const location = results[0].geometry.location;

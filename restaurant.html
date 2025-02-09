@@ -2,10 +2,25 @@
 
 <html>
     <head>
-        <link ref="stylesheet" href="restaurant.css"/>
+        <link rel="stylesheet" href="restaurant.css">
         <title>Restaurant Page</title>
     </head>
     <body>
+        <img id="logo" src="lassologo.jpeg" alt="Leftover Lasso Logo">
+        <div class="container">
+            <form action="action_page.php">
+          
+          
+              <label for="subject">Description of Food Item</label>
+              <textarea id="subject" name="subject" placeholder="Describe the item..." style="height:200px"></textarea>
+          
+              <label for="fname">Amount of Servings</label>
+              <input type="text" id="fname" name="firstname" placeholder="Number of Servings">
+
+              <input type="submit" value="Submit">
+
+            </form>
+          </div>
         
     </body>
 </html>

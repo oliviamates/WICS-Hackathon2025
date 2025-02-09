@@ -9,14 +9,40 @@ body {
 }
 
 .resource-title {
-    margin-left: 650px;
     font-family: Georgia, serif;
     color: #814e18;
 }
 
 .resource-list {
-    margin-left: 625px;
     font-family: Georgia, serif;
     color: #814e18;
     font-size: 18px;
 }
+
+#map {
+    display: flex;
+    margin-left: 370px;
+    border-style: solid;
+    border-color: white;
+    border-width: 20px;
+}
+
+.foodimage { 
+    display: flex; 
+    margin-right: 40px;
+    margin-top: 80px;
+    gap: 50px;
+    margin-bottom: 100px;
+}
+  .foodtext {
+    margin-left: 40px;
+    margin-right: 70px;
+    margin-top: 70px;
+    font-family: 'Times New Roman', serif;
+    color: #824912;
+    font-weight: lighter;
+  }
+  #hat {
+    width: 250px;
+    margin-left: 300px;
+  }
